@@ -161,7 +161,7 @@
   </div>
 </div>
 
-<!-- CAtegory edit modal -->
+<!-- Category edit modal -->
 <div class="modal fade" id="editModal">
   <div class="modal-dialog">
     <div class="modal-content">

@@ -135,7 +135,7 @@ class CategoryController extends Controller
                 <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                 <input type="hidden" id="id_edit" name="id" value="'. $category->id .'">
+                                <input type="hidden" id="id_edit" name="id" value="'. $category->id .'">
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control" id="title" name="title"
                                     placeholder="Enter Title..." value="'. $category->title .'">

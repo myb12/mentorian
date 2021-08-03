@@ -41,6 +41,7 @@
                   <th>Salary</th>
                   <th>Deadline</th>
                   <th>Details</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -57,6 +58,18 @@
                   <td>{{$job->salary}}</td>
                   <td>{{$job->deadline}}</td>
                   <td>{!! Str::words($job->details, '15') !!}</td>
+                  <td class="d-flex justify-content-center">
+                        <a href="{{route('job.edit',$job->id)}}" class="btn btn-icon btn-warning mr-1"><i class="fa fa-edit"></i></a>
+                      <a href="javascript:void(0)" class="btn btn-danger" onclick="
+                      if (confirm('are you sure to delete?')) {
+                        document.getElementById('delete_form_{{$job->id}}').submit();
+                      }
+                      "><i class="fa fa-trash"></i></a>
+                      <form action="{{route('job.destroy',$job->id)}}" id="delete_form_{{$job->id}}" method="post">
+                         @csrf
+                         @method('DELETE')
+                      </form>
+                  </td>
                 </tr>
               </tbody>
                 @endforeach
