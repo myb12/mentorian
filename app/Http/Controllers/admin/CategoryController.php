@@ -124,7 +124,7 @@ class CategoryController extends Controller
             Storage::delete('/'.$category->banner);
         }
         $category->delete();
-        return redirect()->route('category.index');
+        return redirect()->to(route('category.index'));
     }
 
     public function editCategory(Request $request){

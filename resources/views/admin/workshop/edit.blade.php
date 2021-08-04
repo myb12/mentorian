@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title','edit job')
+@section('title','edit workshop')
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -10,8 +10,8 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{route('job.index')}}">Jobs</a></li>
-                    <li class="breadcrumb-item active">Edit Job</li>
+                    <li class="breadcrumb-item"><a href="{{route('job.index')}}">Workshops</a></li>
+                    <li class="breadcrumb-item active">Edit Workshop</li>
                 </ol>
             </div>
         </div>
@@ -28,33 +28,32 @@
                 <!-- general form elements -->
                 <div class="card card-secondary">
                     <div class="card-header">
-                        <h3 class="card-title">Edit Job</h3>
+                        <h3 class="card-title">Edit Workshop</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="{{route('job.update',$job->id)}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('workshop.update',$workshop->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="hidden" name="id" value="{{$job->id}}">
+                                        <input type="hidden" name="id" value="{{$workshop->id}}">
                                         <label for="title">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
-                                            placeholder="Enter Title..." value="{{$job->title}}" required>
+                                            placeholder="Enter Title..." value="{{$workshop->id}}" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
                                        <label>Select Category</label>
-                                       
                                        <select class="form-control" name="cat_id" required>
                                          <option value="" selected disabled>Please Select a category</option>
                                          @if($categories)
                                          @foreach($categories as $category)
-                                         <option value="{{$category->id}}" {{($category->id==$job->category_id) ? 'selected':''}}>{{$category->title}}</option>
+                                         <option value="{{$category->id}}" {{($category->id==$workshop->category_id) ? 'selected':''}}>{{$category->title}}</option>
                                          @endforeach
                                          @endif
                                        </select>
@@ -63,53 +62,74 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="company_name">Commpany Name</label>
-                                        <input type="text" class="form-control" id="company_name" name="company_name"
-                                            placeholder="Enter Company Name..." value="{{$job->title}}" required>
+                                        <label for="organization_name">Organization Name</label>
+                                        <input type="text" class="form-control" id="organization_name" name="organization_name"
+                                            placeholder="Enter Organization Name..." value="{{$workshop->organization_name}}" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="company_logo">Update Company Logo</label>
+                                        <label for="banner">Upload Banner</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                              <input type="file" name="company_logo" id="company_logo" class="custom-file-input" value="" onchange="previewFile(this);">
-                                              <label class="custom-file-label" for="company_logo">Choose file</label>
+                                              <input type="file" name="banner" id="banner" class="custom-file-input" value="{{old('banner')}}" onchange="previewFile(this);">
+                                              <label class="custom-file-label" for="banner">Choose file</label>
                                             </div>
                                         </div>
                                         <img class="mt-3" style="width:100px;" id="previewImg" src="">
                                     </div>
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="checkbox"  id="work_at" name="work_at" class="mr-1"{{($job->work_at == 1) ? 'checked':''}}>
-                                        <label for="work_at">Work at home?</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label  for="old_logo">Old Logo</label>
-                                        <img class="form-control-file"  id="old_logo" src="{{Storage::url($job->company_logo)}}" alt="">
-                                        <input type="hidden" name="old_logo" value="{{$job->company_logo}}">
+                                <div class="col-md-12">
+                                    <div class="row justify-content-end">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="old_banner">Old Banner</label>
+                                                <img class="d-block"  width="200" id="old_banner" src="{{Storage::url($workshop->banner)}}" alt="">
+                                                <input type="hidden" name="old_banner" value="{{$workshop->banner}}">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div> 
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="salary">Salary</label>
-                                        <input type="text" class="form-control" id="salary" name="salary"
-                                            placeholder="Enter Salary..." value="{{$job->salary}}">
+                                        <label for="start_date">Start Date</label>
+                                        <input type="date" class="form-control" id="start_date" name="start_date"
+                                            placeholder="Enter Start Date..." value="{{$workshop->start_date}}" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="deadline">Deadline</label>
-                                        <input type="date" class="form-control" id="deadline" name="deadline"
-                                            placeholder="Enter Deadline..." value="{{$job->deadline}}" required>
+                                        <label for="end_date">End Date</label>
+                                        <input type="date" class="form-control" id="end_date" name="end_date"
+                                            placeholder="Enter End Date..." value="{{$workshop->end_date}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="start_time">Start Time</label>
+                                        <input type="time" class="form-control" id="start_time" name="start_time"
+                                            placeholder="Enter Start Time..." value="{{$workshop->start_time}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input type="text" class="form-control" id="location" name="location"
+                                            placeholder="Enter Workshop Location..." value="{{$workshop->location}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="workshop_link">workshop Link</label>
+                                        <input type="text" class="form-control" id="workshop_link" name="workshop_link"
+                                            placeholder="Enter Workshop Link..." value="{{$workshop->workshop_link}}" required>
                                     </div>
                                 </div>
                                 
@@ -117,13 +137,15 @@
                                     <div class="form-group">
                                         <label for="details">Details</label>
                                         <textarea  class="textarea ckeditor" 
-                                            name="details">{!!$job->details!!}</textarea>
+                                            name="details">{!!$workshop->details!!}</textarea>
                                     </div>
                                 </div>
 
                             </div> 
+
                         </div>
                         <!-- /.card-body -->
+
                         <div class="card-footer d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
@@ -135,7 +157,7 @@
 </section>
 
 @endsection
-
+<!-- /.content-wrapper -->
 @section('script')
 <script>
         function previewFile(input){

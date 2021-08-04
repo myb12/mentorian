@@ -20,10 +20,20 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
     Route::resource('/dashboard','DashboardController');
 
+    // Category section route 
     Route::resource('/category','CategoryController');
     Route::post('/category_edit','CategoryController@editCategory')->name('edit_category');
 
+    // Job section route
     Route::resource('/job','JobController');
-    Route::post('/job_edit','JobController@editJob')->name('edit_job');
+
+    // Internship section route
+    Route::resource('/internship','InternshipController');
+
+    // Event section route
+    Route::resource('/event','EventController');
+
+    // Workshop section route
+    Route::resource('/workshop','WorkshopController');
     
 });

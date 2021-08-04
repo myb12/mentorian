@@ -41,30 +41,21 @@
                                     <div class="form-group">
                                         <label for="title">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
-                                            placeholder="Enter Title..." value="{{old('title')}}">
-                                        @error('title')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
+                                            placeholder="Enter Title..." value="{{old('title')}}" required>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                       <label>Select Category</label>
-                                       
-                                       <select class="form-control" name="cat_id" >
-                                           <option value="none" selected disabled>Please Select a category</option>
+                                       <label for="cat_id">Select Category</label>
+                                       <select class="form-control" name="cat_id" required>
+                                         <option value="" selected disabled>Please Select a category</option>
                                          @if($categories)
                                          @foreach($categories as $category)
-                                          <option value="{{$category->id}}">{{$category->title}}</option>
+                                         <option value="{{$category->id}}">{{$category->title}}</option>
                                          @endforeach
                                          @endif
                                        </select>
-                                      
-
-                                       @error('title')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
                                      </div>
                                 </div>
 
@@ -72,10 +63,7 @@
                                     <div class="form-group">
                                         <label for="company_name">Commpany Name</label>
                                         <input type="text" class="form-control" id="company_name" name="company_name"
-                                            placeholder="Enter Company Name..." value="{{old('company_name')}}">
-                                        @error('company_name')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
+                                            placeholder="Enter Company Name..." value="{{old('company_name')}}" required>
                                     </div>
                                 </div>
 
@@ -89,10 +77,6 @@
                                             </div>
                                         </div>
                                         <img class="mt-3" style="width:100px;" id="previewImg" src="">
-                                    
-                                        @error('image')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
                                     </div>
                                 </div>
 
@@ -100,9 +84,6 @@
                                     <div class="form-group">
                                         <input type="checkbox"  id="work_at" name="work_at" class="mr-1">
                                         <label for="work_at">Work at home?</label>
-                                        @error('category')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
                                     </div>
                                 </div>
 
@@ -111,9 +92,6 @@
                                         <label for="salary">Salary</label>
                                         <input type="text" class="form-control" id="salary" name="salary"
                                             placeholder="Enter Salary..." value="{{old('salary')}}">
-                                        @error('salary')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
                                     </div>
                                 </div>
 
@@ -121,30 +99,21 @@
                                     <div class="form-group">
                                         <label for="deadline">Deadline</label>
                                         <input type="date" class="form-control" id="deadline" name="deadline"
-                                            placeholder="Enter Deadline..." value="{{old('deadline')}}">
-                                        @error('deadline')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
+                                            placeholder="Enter Deadline..." value="{{old('deadline')}}" required>
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="message">Details</label>
+                                        <label for="details">Details</label>
                                         <textarea  class="textarea ckeditor" 
-                                            name="details">{{old('description')}}</textarea>
-                                        @error('description')
-                                        <p class="alert alert-danger" style="margin-top: 5px;">{{$message}}</p>
-                                        @enderror
-                                        
+                                            name="details">{{old('details')}}</textarea>
                                     </div>
                                 </div>
 
                             </div>
-
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
@@ -172,5 +141,16 @@
                 reader.readAsDataURL(file);
             }
         }
+</script>
+
+<script>
+        CKEDITOR.replace( 'details' );
+        $("form").submit( function(e) {
+            var messageLength = CKEDITOR.instances['details'].getData().replace(/<[^>]*>/gi, '').length;
+            if( !messageLength ) {
+                alert( 'Please enter details :)' );
+                e.preventDefault();
+            }
+        });
 </script>
 @endsection

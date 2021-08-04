@@ -114,7 +114,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" name="title" value="{{old('title')}}" />
+                <input type="text" class="form-control" name="title" value="{{old('title')}}" placeholder="Enter Title.." required>
               </div>
             </div>
 
