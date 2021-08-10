@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+//Admin section router
 Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
     Route::resource('/dashboard','DashboardController');
 
@@ -36,4 +37,18 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
     // Workshop section route
     Route::resource('/workshop','WorkshopController');
     
+});
+
+//Website route section
+Route::group(['namespace' => 'Site'], function () {
+    Route::get('/','HomeController@index')->name('home');
+
+    Route::get('/job_list','JobListController@index')->name('job_list');
+    Route::get('/job_details','JobDetailsController@index')->name('job_details');
+
+    Route::get('/internship_list','InternshipListController@index')->name('internship_list');
+    Route::get('/internship_details','InternshipDetailsController@index')->name('internship_details');
+
+    Route::get('/workshop_list','WorkshopListController@index')->name('workshop_list');
+    Route::get('/workshop_details','WorkshopDetailsController@index')->name('workshop_details');
 });
