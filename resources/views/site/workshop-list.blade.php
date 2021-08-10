@@ -27,7 +27,7 @@
               <div class="workshop-image">
                 <div class="workshop-ribbon">
                   <small><i class="far fa-hourglass mr-1"></i>
-                   @if ($workshop->end_date > date('Y-m-d H:i:s'))
+                   @if ($workshop->end_date < date('Y-m-d'))
                       Deadline Over
                    @else
                       On Going
