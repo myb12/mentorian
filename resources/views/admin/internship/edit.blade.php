@@ -66,7 +66,7 @@
                                     <div class="form-group">
                                         <label for="company_name">Commpany Name</label>
                                         <input type="text" class="form-control" id="company_name" name="company_name"
-                                            placeholder="Enter Company Name..." value="{{$internship->title}}" required>
+                                            placeholder="Enter Company Name..." value="{{$internship->company_name}}" required>
                                     </div>
                                 </div>
                                 

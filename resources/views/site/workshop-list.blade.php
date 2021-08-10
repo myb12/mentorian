@@ -33,7 +33,7 @@
                   src="{{Storage::url($workshop->banner)}}"
                   alt="Card image cap"
                 />
-                <a href="workshop-details.html">
+                <a href="{{route('workshop_details',$workshop->id)}}">
                   <div class="see-more-workshops">
                       <i class="fas fa-plus btn btn-sm btn-mentorian"></i>
                   </div>

@@ -101,6 +101,10 @@ h5,
     border-top-right-radius: 6px;
 }
 
+.opportunities .card{
+    cursor: pointer;
+}
+
 .see-more {
     display: flex;
     align-items: center;
@@ -117,7 +121,7 @@ h5,
     bottom: 0;
     transform: scaleY(0);
     transform-origin: bottom;
-    transition: all 0.8s ease-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .opportunities .card:hover .see-more {
@@ -129,10 +133,14 @@ h5,
 }
 .categories li {
     padding: 5px 10px;
+    border-radius: 14px;
+    transition: all 0.2s linear;
 }
 .categories li:hover {
     border-radius: 14px;
-    background: #c8233313;
+    /* background: #c8233313; */
+    background-color: #c82333;
+    color: #fff;
 }
 .categories .card {
     top: 80px;

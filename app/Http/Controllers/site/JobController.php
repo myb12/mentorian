@@ -4,10 +4,10 @@ namespace App\Http\Controllers\site;
 
 use App\Models\Job;
 use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class JobListController extends Controller
+class JobController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -50,7 +50,8 @@ class JobListController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Job::find($id);
+        return view('site.job-details', compact('job'));
     }
 
     /**

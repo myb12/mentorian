@@ -4,10 +4,10 @@ namespace App\Http\Controllers\site;
 
 use App\Models\Category;
 use App\Models\Internship;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class InternshipListController extends Controller
+class InternshipController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class InternshipListController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {    
+    {
         $categories = Category::all();
         $jobs = Internship::all();
         return view('site.job-list', compact('jobs', 'categories'));
@@ -50,7 +50,8 @@ class InternshipListController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Internship::find($id);
+        return view('site.job-details', compact('job'));
     }
 
     /**

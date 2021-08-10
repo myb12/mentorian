@@ -5,23 +5,13 @@
       <section class="banner-margin-top" id="job">
         <div class="jumbotron jumbotron-fluid workshop-details-bg">
           <div class="container">
-            <h1 class="banner-title">
-              Your Professional Development Opportunity
-            </h1>
-            <p class="banner-paragraph">
-              Your Big Year works with people from every background and provides
-              them with inspiration, peer network, innovation and
-              entrepreneurial skills to build their own action plan and make an
-              impact in their life and in their world.
-            </p>
+            <h1 class="banner-title">{{$workshop->title}}</h1>
           </div>
         </div>
       </section>
     </header>
 
-    <main>
-      @if($workshops)
-      @foreach($workshops as $workshop)     
+    <main>   
       <!-- Workshop details section-->
       <section class="container workshops-container my-5 border rounded p-3">
         <header class="workshops-header mb-4">
@@ -90,8 +80,6 @@
               </div>
             </div>
       </section>
-      @endforeach
-      @endif
     </main>
 
 @endsection

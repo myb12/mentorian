@@ -33,11 +33,15 @@
                   content..
                 </p>
               </div>
-              <div class="see-more">
-                <a href="{{route('job_list')}}" class="btn btn-mentorian"
-                  ><i class="far fa-arrow-alt-circle-right"></i> See more
-                </a>
-              </div>
+
+              <a href="{{route('job_list')}}">
+                  <div class="see-more">
+                     <button class="btn btn-sm btn-mentorian">
+                       <i class="far fa-arrow-alt-circle-right"></i> See more
+                      </button>
+                  </div>
+              </a>
+
             </div>
           </div>
 
@@ -55,11 +59,15 @@
                   content.
                 </p>
               </div>
-              <div class="see-more">
-                <a href="{{route('internship_list')}}" class="btn btn-mentorian"
-                  ><i class="far fa-arrow-alt-circle-right"></i> See more
-                </a>
-              </div>
+
+              <a href="{{route('internship_list')}}">
+                  <div class="see-more">
+                     <button class="btn btn-sm btn-mentorian">
+                       <i class="far fa-arrow-alt-circle-right"></i> See more
+                      </button>
+                  </div>
+              </a>
+
             </div>
           </div>
 
@@ -77,11 +85,15 @@
                   content.
                 </p>
               </div>
-              <div class="see-more">
-                <a href="{{route('workshop_list')}}" class="btn btn-mentorian"
-                  ><i class="far fa-arrow-alt-circle-right"></i> See more
-                </a>
-              </div>
+              
+              <a href="{{route('workshop_list')}}">
+                  <div class="see-more">
+                     <button class="btn btn-sm btn-mentorian">
+                       <i class="far fa-arrow-alt-circle-right"></i> See more
+                      </button>
+                  </div>
+              </a>
+              
             </div>
           </div>
           

@@ -6,7 +6,7 @@ use App\Models\Workshop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class WorkshopDetailsController extends Controller
+class WorkshopController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class WorkshopDetailsController extends Controller
     public function index()
     {
          $workshops = Workshop::all();
-         return view('site.workshop-details', compact('workshops'));
+         return view('site.workshop-list', compact('workshops'));
     }
 
     /**
@@ -48,7 +48,8 @@ class WorkshopDetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        $workshop = Workshop::find($id);
+        return view('site.workshop-details', compact('workshop'));
     }
 
     /**

@@ -43,12 +43,12 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
 Route::group(['namespace' => 'Site'], function () {
     Route::get('/','HomeController@index')->name('home');
 
-    Route::get('/job_list','JobListController@index')->name('job_list');
-    Route::get('/job_details/{id}','JobDetailsController@show')->name('job_details');
+    Route::get('/job_list','JobController@index')->name('job_list');
+    Route::get('/job_details/{id}','JobController@show')->name('job_details');
 
-    Route::get('/internship_list','InternshipListController@index')->name('internship_list');
-    Route::get('/internship_details/{id}','InternshipDetailsController@show')->name('internship_details');
+    Route::get('/internship_list','InternshipController@index')->name('internship_list');
+    Route::get('/internship_details/{id}','InternshipController@show')->name('internship_details');
 
-    Route::get('/workshop_list','WorkshopListController@index')->name('workshop_list');
-    Route::get('/workshop_details','WorkshopDetailsController@index')->name('workshop_details');
+    Route::get('/workshop_list','WorkshopController@index')->name('workshop_list');
+    Route::get('/workshop_details/{id}','WorkshopController@show')->name('workshop_details');
 });
