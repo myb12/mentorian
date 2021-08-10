@@ -26,7 +26,13 @@
             <div class="card">
               <div class="workshop-image">
                 <div class="workshop-ribbon">
-                  <small><i class="far fa-hourglass"></i> On Going</small>
+                  <small><i class="far fa-hourglass mr-1"></i>
+                   @if ($workshop->end_date > date('Y-m-d H:i:s'))
+                      Deadline Over
+                   @else
+                      On Going
+                   @endif 
+                </small>
                 </div>
                 <img
                   class="img-fluid"
