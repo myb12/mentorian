@@ -35,7 +35,7 @@
               >{{$job->company_name}}</a
             >
           </div>
-          <img class="company-logo" src="{{Storage::url($job->company_logo)}}" alt="" />
+          <img class="company-logo img-fluid" src="{{Storage::url($job->company_logo)}}" alt="" />
         </header>
 
         <div class="row">

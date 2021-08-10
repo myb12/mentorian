@@ -15,13 +15,32 @@
 
     <main>
       <!-- Workshops list section-->
-      <div class="helper-div" id="opportunities"></div>
-      <section class="container mb-5">
-        <h3 class="section-title mb-4">Workshops</h3>
+    <!-- <div class="helper-div" id="opportunities"></div> -->
+    <section class="container mb-5">
+
+      <div class="row  mx-0">
+          
+          <div class="col-12 col-md-3 my-2 categories px-0 pr-md-0 pl-md-3 order-md-2">
+            <h3 class="section-title mb-3">Categories</h3>
+            <div class="card">
+              <ul class="list-unstyled">
+                @if($categories)
+                @foreach($categories as $category)
+                <a href="">
+                  <li class="mt-3">{{$category->title}}</li>
+                </a>
+                @endforeach
+                @endif
+              </ul>
+            </div>
+          </div>
+
+      <div class="col-12 col-md-9 my-2 job-list px-0 pr-md-3 pl-md-0 order-md-1">     
+        <h3 class="section-title mb-3">Workshops</h3>
         <div class="row workshops">
             @if($workshops)
             @foreach($workshops as $workshop)         
-          <div class="col-12 col-md-6 col-lg-3 my-2 px-2">
+          <div class="col-12 col-md-6 col-lg-4 mb-3 px-2">
 
             <div class="card">
               <div class="workshop-image">
@@ -57,8 +76,9 @@
           @endif
 
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
 @endsection
 

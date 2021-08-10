@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\site;
 
+use App\Models\Category;
 use App\Models\Workshop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,8 +16,9 @@ class WorkshopController extends Controller
      */
     public function index()
     {
+         $categories = Category::all();
          $workshops = Workshop::all();
-         return view('site.workshop-list', compact('workshops'));
+         return view('site.workshop-list', compact('workshops', 'categories'));
     }
 
     /**

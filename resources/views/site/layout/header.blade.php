@@ -48,12 +48,12 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('job_list')}}"
-                    >Job Circular <span class="sr-only">(current)</span></a
+                    >Jobs <span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('internship_list')}}"
-                    >Internship<span class="sr-only">(current)</span></a
+                    >Internships<span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">

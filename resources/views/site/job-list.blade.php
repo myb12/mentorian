@@ -18,6 +18,7 @@
       <!-- <div class="helper-div" id="jobs"></div> -->
       <section class="container mb-5">
         <div class="row jobs mx-0">
+          
           <div class="col-12 col-md-4 my-2 categories px-0 pl-md-0 pr-md-3">
             <h3 class="section-title mb-3">Categories</h3>
             <div class="card">
@@ -32,6 +33,7 @@
               </ul>
             </div>
           </div>
+
           <div class="col-12 col-md-8 my-2 job-list px-0 pl-md-3 pr-md-0">
             <h3 class="section-title mb-3">Job Circulars</h3>
             
@@ -47,7 +49,7 @@
                     href=""
                     >{{$job->company_name}}</a>
                 </div>
-                <img class="company-logo" src="{{Storage::url($job->company_logo)}}" alt="" />
+                <img class="company-logo img-fluid" src="{{Storage::url($job->company_logo)}}" alt="" />
               </header>
 
               <div class="row my-4">
@@ -114,7 +116,6 @@
                               <button class="btn btn-sm btn-mentorian mr-3" type="submit">View details</button>
                             </a>
                       @endif
-                
               </div>
              
             </div>

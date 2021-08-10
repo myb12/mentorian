@@ -27,11 +27,7 @@
                 alt="Card image cap"
               />
               <div class="card-body">
-                <h5 class="card-title">Jobs</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content..
-                </p>
+                <h3 class="card-title text-center">Jobs</h3>
               </div>
 
               <a href="{{route('job_list')}}">
@@ -53,11 +49,7 @@
                 alt="Card image cap"
               />
               <div class="card-body">
-                <h5 class="card-title">Internships</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h3 class="card-title text-center">Internships</h3>
               </div>
 
               <a href="{{route('internship_list')}}">
@@ -79,11 +71,7 @@
                 alt="Card image cap"
               />
               <div class="card-body">
-                <h5 class="card-title">Workshops</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h3 class="card-title text-center">Workshops</h3>
               </div>
               
               <a href="{{route('workshop_list')}}">
