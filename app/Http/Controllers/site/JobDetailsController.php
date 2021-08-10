@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Job;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class JobDetailsController extends Controller
 {
@@ -12,9 +13,9 @@ class JobDetailsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('site.job-details');
+        
     }
 
     /**
@@ -46,7 +47,8 @@ class JobDetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Job::find($id);
+        return view('site.job-details', compact('job'));
     }
 
     /**
@@ -57,7 +59,7 @@ class JobDetailsController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

@@ -42,7 +42,7 @@
                                         <input type="hidden" name="id" value="{{$workshop->id}}">
                                         <label for="title">Title</label>
                                         <input type="text" class="form-control" id="title" name="title"
-                                            placeholder="Enter Title..." value="{{$workshop->id}}" required>
+                                            placeholder="Enter Title..." value="{{$workshop->title}}" required>
                                     </div>
                                 </div>
 

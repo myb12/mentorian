@@ -19,7 +19,7 @@
       <section class="container mb-5">
         <h3 class="section-title mb-4">Opportunities</h3>
         <div class="row opportunities">
-          <div class="col-12 col-md-6 my-3">
+          <div class="col-12 col-md-4 my-3">
             <div class="card">
               <img
                 class="img-fluid m-3"
@@ -27,21 +27,21 @@
                 alt="Card image cap"
               />
               <div class="card-body">
-                <h5 class="card-title">Job Circulars</h5>
+                <h5 class="card-title">Jobs</h5>
                 <p class="card-text">
                   With supporting text below as a natural lead-in to additional
                   content..
                 </p>
               </div>
               <div class="see-more">
-                <a href="job-list.html" class="btn btn-mentorian"
+                <a href="{{route('job_list')}}" class="btn btn-mentorian"
                   ><i class="far fa-arrow-alt-circle-right"></i> See more
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 my-3">
+          <div class="col-12 col-md-4 my-3">
             <div class="card">
               <img
                 class="img-fluid m-3"
@@ -49,21 +49,21 @@
                 alt="Card image cap"
               />
               <div class="card-body">
-                <h5 class="card-title">Internship</h5>
+                <h5 class="card-title">Internships</h5>
                 <p class="card-text">
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
               </div>
               <div class="see-more">
-                <a href="internship-list.html" class="btn btn-mentorian"
+                <a href="{{route('internship_list')}}" class="btn btn-mentorian"
                   ><i class="far fa-arrow-alt-circle-right"></i> See more
                 </a>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 my-3">
+          <div class="col-12 col-md-4 my-3">
             <div class="card">
               <img
                 class="img-fluid m-3"
@@ -78,34 +78,13 @@
                 </p>
               </div>
               <div class="see-more">
-                <a href="workshop-list.html" class="btn btn-mentorian"
+                <a href="{{route('workshop_list')}}" class="btn btn-mentorian"
                   ><i class="far fa-arrow-alt-circle-right"></i> See more
                 </a>
               </div>
             </div>
           </div>
-
-          <div class="col-12 col-md-6 my-3">
-            <div class="card">
-              <img
-                class="img-fluid m-3"
-                src="{{asset('assets/site/images/category.jpg')}}"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Events</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-              </div>
-              <div class="see-more">
-                <a href="" class="btn btn-mentorian"
-                  ><i class="far fa-arrow-alt-circle-right"></i> See more
-                </a>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </section>
     </main>

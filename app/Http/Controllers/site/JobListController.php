@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Job;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class JobListController extends Controller
 {
@@ -14,7 +16,9 @@ class JobListController extends Controller
      */
     public function index()
     {
-        return view('site.job-list');
+        $categories = Category::all();
+        $jobs = Job::all();
+        return view('site.job-list', compact('jobs', 'categories'));
     }
 
     /**

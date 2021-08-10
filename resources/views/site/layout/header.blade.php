@@ -42,22 +42,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"
+                  <a class="nav-link" href="{{route('home')}}"
                     >Home <span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="job-list.html"
+                  <a class="nav-link" href="{{route('job_list')}}"
                     >Job Circular <span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="internship-list.html"
+                  <a class="nav-link" href="{{route('internship_list')}}"
                     >Internship<span class="sr-only">(current)</span></a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="workshop-list.html"
+                  <a class="nav-link" href="{{route('workshop_list')}}"
                     >Workshops <span class="sr-only">(current)</span></a
                   >
                 </li>

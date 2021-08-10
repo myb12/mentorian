@@ -54,13 +54,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('event.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-calendar-week"></i>
-              <p>Event</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="{{route('workshop.index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-check"></i>
               <p>Workshop</p>

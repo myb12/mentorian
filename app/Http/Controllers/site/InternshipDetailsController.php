@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Internship;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class InternshipDetailsController extends Controller
 {
@@ -14,7 +15,7 @@ class InternshipDetailsController extends Controller
      */
     public function index()
     {
-         return view('site.job-details');
+        
     }
 
     /**
@@ -46,7 +47,8 @@ class InternshipDetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Internship::find($id);
+        return view('site.job-details', compact('job'));
     }
 
     /**

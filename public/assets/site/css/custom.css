@@ -55,8 +55,8 @@ h5,
     position: relative;
     display: inline-block;
 }
-.nav-link{
-  color: #263b5e!important;
+.nav-link {
+    color: #263b5e !important;
 }
 
 .nav-link:before,
@@ -81,7 +81,7 @@ h5,
 }
 
 .nav-link:hover {
-    color: #c82333!important;
+    color: #c82333 !important;
 }
 
 /* opportunities section  */
@@ -217,7 +217,7 @@ h5,
     position: relative;
 }
 .workshops .card {
-    min-height: 400px;
+    min-height: 380px;
     height: 100%;
     box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
 }
@@ -255,6 +255,14 @@ h5,
 .workshop-image:hover .see-more-workshops i {
     transform: scale(1);
 }
+
+/* .workshops .card-body p{
+    margin-bottom: 0 !important;
+} */
+
+/* .workshops .card-body{
+    height: 100% !important;
+}  */
 
 /* workshop ribbon section  */
 .workshop-ribbon {

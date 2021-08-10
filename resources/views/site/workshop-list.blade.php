@@ -19,7 +19,10 @@
       <section class="container mb-5">
         <h3 class="section-title mb-4">Workshops</h3>
         <div class="row workshops">
+            @if($workshops)
+            @foreach($workshops as $workshop)         
           <div class="col-12 col-md-6 col-lg-3 my-2 px-2">
+
             <div class="card">
               <div class="workshop-image">
                 <div class="workshop-ribbon">
@@ -27,7 +30,7 @@
                 </div>
                 <img
                   class="img-fluid"
-                  src="{{asset('assets/site/images/category.jpg')}}"
+                  src="{{Storage::url($workshop->banner)}}"
                   alt="Card image cap"
                 />
                 <a href="workshop-details.html">
@@ -37,83 +40,16 @@
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Professional Development Opportunity</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content..
-                </p>
+                <h5 class="card-title">{{$workshop->title}}</h5>
+              </div>
+              <div class="card-footer text-center">
+                  <span>{{$workshop->organization_name}}</span>
               </div>
             </div>
           </div>
+          @endforeach
+          @endif
 
-          <div class="col-12 col-md-6 col-lg-3 my-2 px-2">
-            <div class="card">
-              <div class="workshop-image">
-                <div class="workshop-ribbon">
-                  <small><i class="far fa-hourglass"></i> Deadline Over</small>
-                </div>
-                <img src="{{asset('assets/site/images/category.jpg')}}" alt="Card image cap" />
-                <a href="workshop-details.html">
-                  <div class="see-more-workshops">
-                      <i class="fas fa-plus btn btn-sm btn-mentorian"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Professional Development Opportunity</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 my-2 px-2">
-            <div class="card">
-              <div class="workshop-image">
-                <div class="workshop-ribbon">
-                  <small><i class="far fa-hourglass"></i> On Going</small>
-                </div>
-                <img src="{{asset('assets/site/images/category.jpg')}}" alt="Card image cap" />
-                <a href="workshop-details.html">
-                  <div class="see-more-workshops">
-                      <i class="fas fa-plus btn btn-sm btn-mentorian"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Professional Development Opportunity</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3 my-2 px-2">
-            <div class="card">
-              <div class="workshop-image">
-                <div class="workshop-ribbon">
-                  <small><i class="far fa-hourglass"></i> On Going</small>
-                </div>
-                <img src="{{asset('assets/site/images/category.jpg')}}" alt="Card image cap" />
-                <a href="workshop-details.html">
-                  <div class="see-more-workshops">
-                      <i class="fas fa-plus btn btn-sm btn-mentorian"></i>
-                  </div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Professional Development Opportunity</h5>
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>
