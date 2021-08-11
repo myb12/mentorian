@@ -96,7 +96,6 @@ class InternshipController extends Controller
             $jobs = false;
         }
         $internships = DB::table('internships')->get();
-        // dd($jobs);
         return view('site.job-list', compact('jobs', 'categories','internships'));
     }
 

@@ -130,5 +130,7 @@
       src="https://kit.fontawesome.com/634ac0fe7a.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Custom script  -->
+    <script src="{{asset('assets/site/js/script.js')}}"></script>
   </body>
 </html>

@@ -139,15 +139,16 @@
             </div>
             @endforeach
             @elseif(!$jobs)
-              @if($internships)  
-               <div class="not-found-message p-5 mt-0">
-                  <h5 class="text-danger">Sorry! No internship found with the category.</h5>
-               </div>
-              @else
-               <div class="not-found-message p-5 mt-0">
-                  <h5 class="text-danger">Sorry! No job found with the category.</h5>
-               </div>
-              @endif
+            
+                 @if($internships)  
+                  <div class="not-found-message p-5 mt-0">
+                     <h5 class="text-danger">Sorry! No internship found with the category.</h5>
+                  </div>
+                 @else
+                  <div class="not-found-message p-5 mt-0">
+                     <h5 class="text-danger">Sorry! No job found with the category.</h5>
+                  </div>
+                 @endif
               
             @endif
           </div>
