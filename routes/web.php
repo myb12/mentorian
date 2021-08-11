@@ -45,10 +45,13 @@ Route::group(['namespace' => 'Site'], function () {
 
     Route::get('/job_list','JobController@index')->name('job_list');
     Route::get('/job_details/{id}','JobController@show')->name('job_details');
+    Route::get('/jobs_by_category/{id}','JobController@jobsByCategory')->name('jobs_by_category');
 
     Route::get('/internship_list','InternshipController@index')->name('internship_list');
     Route::get('/internship_details/{id}','InternshipController@show')->name('internship_details');
+    Route::get('/internships_by_category/{id}','InternshipController@internshipsByCategory')->name('internships_by_category');
 
     Route::get('/workshop_list','WorkshopController@index')->name('workshop_list');
     Route::get('/workshop_details/{id}','WorkshopController@show')->name('workshop_details');
+    Route::get('/workshops_by_category/{id}','WorkshopController@workshopsByCategory')->name('workshop_by_category');
 });

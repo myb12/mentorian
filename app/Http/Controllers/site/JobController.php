@@ -18,7 +18,8 @@ class JobController extends Controller
     {
         $categories = Category::all();
         $jobs = Job::all();
-        return view('site.job-list', compact('jobs', 'categories'));
+        $internships = false;
+        return view('site.job-list', compact('jobs', 'categories','internships'));
     }
 
     /**
@@ -87,4 +88,17 @@ class JobController extends Controller
     {
         //
     }
+
+    public function jobsByCategory($id){
+        $categories = Category::all();
+        $jobs = Job::select('*')->where('category_id', $id)->get();
+        if($jobs->count() == 0){
+            $jobs = false;
+        }
+        $internships = false;
+        // dd($jobs);
+        return view('site.job-list', compact('jobs', 'categories','internships'));
+    }
+
+    
 }

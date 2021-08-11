@@ -87,4 +87,15 @@ class WorkshopController extends Controller
     {
         //
     }
+
+    public function workshopsByCategory($id){
+        $categories = Category::all();
+        $workshops = Workshop::select('*')->where('category_id', $id)->get();
+
+        if($workshops->count() == 0){
+            $workshops = false;
+        }
+        
+        return view('site.workshop-list', compact('workshops', 'categories'));
+    }
 }

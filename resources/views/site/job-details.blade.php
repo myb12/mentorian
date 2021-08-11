@@ -42,7 +42,7 @@
           <div class="col-6 my-2 col-md-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted"
-                ><i class="fas fa-laptop-house"></i> &nbsp;WORK AT</span
+                ><i class="fas fa-laptop-house mr-2"></i>WORK AT</span
               >
               <span class="m-0">
                 @if ($job->work_at == 1)
@@ -57,7 +57,7 @@
           <div class="col-6 my-2 col-md-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted"
-                ><i class="far fa-money-bill-alt"></i> &nbsp;SALARY</span
+                ><i class="far fa-money-bill-alt mr-2"></i>SALARY</span
               >
               <span class="m-0">{{$job->salary}}</span>
             </div>
@@ -66,7 +66,7 @@
           <div class="col-6 my-2 col-md-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted"
-                ><i class="fas fa-hourglass-end"></i> &nbsp;DEADLINE</span
+                ><i class="fas fa-hourglass-end mr-2"></i>DEADLINE</span
               >
               <span class="m-0">{{$job->deadline}}</span>
             </div>
@@ -75,7 +75,7 @@
           <div class="col-6 my-2 col-md-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted"
-                ><i class="fas fa-briefcase"></i> &nbsp;EMPLOYMENT STATUS</span
+                ><i class="fas fa-briefcase mr-2"></i>EMPLOYMENT STATUS</span
               >
               <span class="m-0">
                 @if ($job->duration)
@@ -91,7 +91,7 @@
           <div class="col-6 my-2 col-md-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted"
-                ><i class="fas fa-stopwatch"></i> &nbsp;DURATION</span
+                ><i class="fas fa-stopwatch mr-2"></i>DURATION</span
               >
               <span class="m-0">{{$job->duration}}</span>
             </div>

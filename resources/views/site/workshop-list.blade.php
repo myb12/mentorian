@@ -24,9 +24,12 @@
             <h3 class="section-title mb-3">Categories</h3>
             <div class="card">
               <ul class="list-unstyled">
+                <a href="{{route('workshop_list')}}">
+                        <li class="mt-3 font-weight-bold">All Workshops</li>
+                </a>
                 @if($categories)
                 @foreach($categories as $category)
-                <a href="">
+                <a href="{{route('workshop_by_category',$category->id)}}">
                   <li class="mt-3">{{$category->title}}</li>
                 </a>
                 @endforeach
@@ -40,18 +43,18 @@
         <div class="row workshops">
             @if($workshops)
             @foreach($workshops as $workshop)         
-          <div class="col-12 col-md-6 col-lg-4 mb-3 px-2">
+          <div class="col-12 col-md-6 col-lg-4 mb-3 px-md-2">
 
             <div class="card">
               <div class="workshop-image">
                 <div class="workshop-ribbon">
-                  <small><i class="far fa-hourglass mr-1"></i>
+                  
                    @if ($workshop->end_date < date('Y-m-d'))
-                      Deadline Over
+                     <small><i class="fas fa-hourglass-end mr-1"></i>Deadline Over</small>
                    @else
-                      On Going
+                     <small><i class="fas fa-hourglass-half mr-1"></i>On Going</small>
                    @endif 
-                </small>
+                
                 </div>
                 <img
                   class="img-fluid"
@@ -68,11 +71,17 @@
                 <h5 class="card-title">{{$workshop->title}}</h5>
               </div>
               <div class="card-footer text-center">
-                  <span>{{$workshop->organization_name}}</span>
+                  <span><i class="fas fa-users mr-1"></i>{{$workshop->organization_name}}</span>
               </div>
             </div>
           </div>
           @endforeach
+          @elseif(!$workshops)
+             <div class="col-12 mb-3 ">
+               <div class="not-found-message p-5 mt-0">
+                  <h5 class="text-danger">Sorry! No workshop found with the category.</h5>
+                </div>
+             </div>
           @endif
 
         </div>

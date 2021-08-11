@@ -4,8 +4,9 @@ namespace App\Http\Controllers\site;
 
 use App\Models\Category;
 use App\Models\Internship;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class InternshipController extends Controller
 {
@@ -18,7 +19,8 @@ class InternshipController extends Controller
     {
         $categories = Category::all();
         $jobs = Internship::all();
-        return view('site.job-list', compact('jobs', 'categories'));
+        $internships = DB::table('internships')->get();
+        return view('site.job-list', compact('jobs', 'categories','internships'));
     }
 
     /**
@@ -87,4 +89,15 @@ class InternshipController extends Controller
     {
         //
     }
+    public function internshipsByCategory($id){
+        $categories = Category::all();
+        $jobs = Internship::select('*')->where('category_id', $id)->get();
+        if($jobs->count() == 0){
+            $jobs = false;
+        }
+        $internships = DB::table('internships')->get();
+        // dd($jobs);
+        return view('site.job-list', compact('jobs', 'categories','internships'));
+    }
+
 }

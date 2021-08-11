@@ -23,12 +23,30 @@
             <h3 class="section-title mb-3">Categories</h3>
             <div class="card">
               <ul class="list-unstyled">
+                @if($internships)                
+                      <a href="{{route('internship_list')}}">
+                             <li class="mt-3 font-weight-bold">All Internships</li>
+                      </a>
+                @else
+                     <a href="{{route('job_list')}}">
+                             <li class="mt-3 font-weight-bold">All Jobs</li>
+                      </a>
+                @endif
+
                 @if($categories)
-                @foreach($categories as $category)
-                <a href="">
-                  <li class="mt-3">{{$category->title}}</li>
-                </a>
-                @endforeach
+                  @foreach($categories as $category)
+
+                  @if($internships)
+                     <a href="{{route('internships_by_category',$category->id)}}">
+                       <li class="mt-3">{{$category->title}}</li>
+                     </a>
+                  @else
+                     <a href="{{route('jobs_by_category',$category->id)}}">
+                       <li class="mt-3">{{$category->title}}</li>
+                     </a>
+                  @endif
+
+                  @endforeach
                 @endif
               </ul>
             </div>
@@ -56,7 +74,7 @@
                 <div class="col-6 my-2 col-lg-4">
                   <div class="d-flex flex-column">
                     <span class="m-0 text-muted"
-                      ><i class="fas fa-laptop-house"></i> &nbsp;WORK AT</span
+                      ><i class="fas fa-laptop-house mr-2"></i>WORK AT</span
                     >
                     <span class="m-0">
                       @if ($job->work_at == 1)
@@ -71,7 +89,7 @@
                 <div class="col-6 my-2 col-lg-4">
                   <div class="d-flex flex-column">
                     <span class="m-0 text-muted"
-                      ><i class="far fa-money-bill-alt"></i> &nbsp;SALARY</span
+                      ><i class="far fa-money-bill-alt mr-2"></i>SALARY</span
                     >
                     <span class="m-0">{{$job->salary}}</span>
                   </div>
@@ -80,7 +98,7 @@
                 <div class="col-6 my-2 col-lg-4">
                   <div class="d-flex flex-column">
                     <span class="m-0 text-muted"
-                      ><i class="fas fa-hourglass-end"></i> &nbsp;DEADLINE</span
+                      ><i class="fas fa-hourglass-end mr-2"></i>DEADLINE</span
                     >
                     <span class="m-0">{{$job->deadline}}</span>
                   </div>
@@ -90,7 +108,7 @@
                 <div class="col-6 my-2 col-md-3">
                   <div class="d-flex flex-column">
                     <span class="m-0 text-muted">
-                      <i class="fas fa-stopwatch"></i> &nbsp;DURATION</span>
+                      <i class="fas fa-stopwatch mr-2"></i>DURATION</span>
                     <span class="m-0">{{$job->duration}}</span>
                   </div>
                 </div>
@@ -120,6 +138,17 @@
              
             </div>
             @endforeach
+            @elseif(!$jobs)
+              @if($internships)  
+               <div class="not-found-message p-5 mt-0">
+                  <h5 class="text-danger">Sorry! No internship found with the category.</h5>
+               </div>
+              @else
+               <div class="not-found-message p-5 mt-0">
+                  <h5 class="text-danger">Sorry! No job found with the category.</h5>
+               </div>
+              @endif
+              
             @endif
           </div>
           

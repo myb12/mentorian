@@ -23,7 +23,7 @@
           <div class="col-6 my-2 col-md-4 mt-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted">
-                <i class="fas fa-users"></i>&nbsp;&nbsp;ORGANIZATION
+                <i class="fas fa-users mr-2"></i>ORGANIZATION
               </span>
               <span class="m-0">{{$workshop->organization_name}}</span>
             </div>
@@ -32,7 +32,7 @@
           <div class="col-6 my-2 col-md-4 mt-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted">
-                <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;LOCATION
+                <i class="fas fa-map-marker-alt mr-2"></i>LOCATION
               </span>
               <span class="m-0">{{$workshop->location}}</span>
             </div>
@@ -41,7 +41,7 @@
           <div class="col-6 my-2 col-md-4 mt-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted">
-                <i class="fas fa-calendar-alt"></i>&nbsp;&nbsp;START DATE
+                <i class="fas fa-calendar-alt mr-2"></i>START DATE
               </span>
               <span class="m-0">{{$workshop->start_date}}</span>
             </div>
@@ -50,7 +50,7 @@
           <div class="col-6 my-2 col-md-4 mt-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted">
-                <i class="fas fa-hourglass-start"></i>&nbsp;&nbsp;END DATE
+                <i class="far fa-calendar-times"></i>END DATE
               </span>
               <span class="m-0">{{$workshop->end_date}}</span>
             </div>
@@ -59,7 +59,7 @@
           <div class="col-6 my-2 col-md-4 mt-3">
             <div class="d-flex flex-column">
               <span class="m-0 text-muted">
-                <i class="fas fa-hourglass-end"></i>&nbsp;&nbsp;START TIME
+                <i class="fas fa-hourglass-start mr-2"></i>START TIME
               </span>
               <span class="m-0">{{$workshop->start_time}}</span>
             </div>
