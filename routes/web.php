@@ -42,6 +42,7 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
 //Website route section
 Route::group(['namespace' => 'Site'], function () {
     Route::get('/','HomeController@index')->name('home');
+    // Route::get('/home','HomeController@index')->name('home');
 
     Route::get('/job_list','JobController@index')->name('job_list');
     Route::get('/job_details/{id}','JobController@show')->name('job_details');
@@ -55,3 +56,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/workshop_details/{id}','WorkshopController@show')->name('workshop_details');
     Route::get('/workshops_by_category/{id}','WorkshopController@workshopsByCategory')->name('workshop_by_category');
 });
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

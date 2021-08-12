@@ -1,6 +1,7 @@
 @include('site.layout.header')
 
-    @yield('content')
+@yield('content')
 
 @include('site.layout.footer')
+
 @yield('script')

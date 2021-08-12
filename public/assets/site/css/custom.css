@@ -27,6 +27,9 @@ h6 {
 .banner-margin-top {
     margin-top: 58px;
 }
+.auth-margin-top {
+    margin-top: 100px;
+}
 .workshop-details-bg {
     background-image: url(../images/workshop-details.png);
     background-size: cover;
@@ -70,7 +73,7 @@ h5,
     height: 3px;
     visibility: hidden;
     background: #c82333;
-    transition: all 0.5s;
+    transition: all 0.5s ease-out;
 }
 .section-title:hover:before,
 .nav-link:hover:before {
@@ -369,6 +372,36 @@ h5,
 .application-process:hover .fa-arrow-right {
     transform: translateX(14px);
 }
+
+/*==========*/
+/* .user:hover:before {
+    visibility: hidden;
+} */
+
+.dropdown-menu {
+    background-color: #fbfbfd;
+    padding: 10px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #c82333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.show > .dropdown-menu {
+    max-height: 900px;
+    visibility: visible;
+}
+
+.dropdown-menu {
+    display: block;
+    max-height: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+/*==========*/
 
 /* footer section  */
 .new_footer_area {
