@@ -1,5 +1,4 @@
 /*==================== LINK ACTIVE ====================*/
-
 function activeColor(className) {
     const links = $(`.${className}`);
     $(document).ready(function () {
