@@ -25,12 +25,12 @@
             <div class="card">
               <ul class="list-unstyled">
                 <a href="{{route('workshop_list')}}">
-                        <li class="mt-3 font-weight-bold">All Workshops</li>
+                        <li class=" li-link mt-3 font-weight-bold">All Workshops</li>
                 </a>
                 @if($categories)
                 @foreach($categories as $category)
                 <a href="{{route('workshop_by_category',$category->id)}}">
-                  <li class="mt-3">{{$category->title}}</li>
+                  <li class=" li-link mt-3">{{$category->title}}</li>
                 </a>
                 @endforeach
                 @endif

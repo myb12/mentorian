@@ -24,12 +24,12 @@
             <div class="card">
               <ul class="list-unstyled">
                 @if($internships)                
-                      <a href="{{route('internship_list')}}">
-                             <li class="mt-3 font-weight-bold">All Internships</li>
+                      <a class="" href="{{route('internship_list')}}">
+                             <li class="li-link mt-3 font-weight-bold">All Internships</li>
                       </a>
                 @else
-                     <a href="{{route('job_list')}}">
-                             <li class="mt-3 font-weight-bold">All Jobs</li>
+                     <a class="" href="{{route('job_list')}}">
+                             <li class="li-link mt-3 font-weight-bold">All Jobs</li>
                       </a>
                 @endif
 
@@ -37,12 +37,12 @@
                   @foreach($categories as $category)
 
                   @if($internships)
-                     <a href="{{route('internships_by_category',$category->id)}}">
-                       <li class="mt-3">{{$category->title}}</li>
+                     <a class="" href="{{route('internships_by_category',$category->id)}}">
+                       <li class="li-link mt-3">{{$category->title}}</li>
                      </a>
                   @else
-                     <a href="{{route('jobs_by_category',$category->id)}}">
-                       <li class="mt-3">{{$category->title}}</li>
+                     <a class="" href="{{route('jobs_by_category',$category->id)}}">
+                       <li class="li-link mt-3">{{$category->title}}</li>
                      </a>
                   @endif
 
@@ -53,7 +53,13 @@
           </div>
 
           <div class="col-12 col-md-8 my-2 job-list px-0 pl-md-3 pr-md-0">
-            <h3 class="section-title mb-3">Job Circulars</h3>
+            <h3 class="section-title mb-3">
+               @if($internships)
+                   Internship
+               @else
+                    Job
+               @endif
+               Circulars</h3>
             
             @if($jobs)
             @foreach($jobs as $job)

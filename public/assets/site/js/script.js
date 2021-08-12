@@ -1,9 +1,21 @@
 /*==================== LINK ACTIVE ====================*/
-$(document).ready(function () {
-    const links = $(".nav-link");
-    for (let link of links) {
-        if (link.href == window.location) {
-            link.className = "nav-link active";
+
+function activeColor(className) {
+    const links = $(`.${className}`);
+    $(document).ready(function () {
+        for (let link of links) {
+            if (link.href && link.href == window.location) {
+                link.className += ` active`;
+            } else if (
+                !link.href &&
+                link.closest("a").href == window.location
+            ) {
+                link.className += ` active`;
+            }
         }
-    }
-});
+    });
+}
+
+activeColor("nav-link");
+
+activeColor("li-link");
