@@ -374,11 +374,7 @@ h5,
 }
 
 /*==========*/
-/* .user:hover:before {
-    visibility: hidden;
-} */
-
-.dropdown-menu {
+/* .dropdown-menu {
     background-color: #fbfbfd;
     padding: 10px;
 }
@@ -400,7 +396,7 @@ h5,
     visibility: hidden;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
-}
+} */
 /*==========*/
 
 /* footer section  */
