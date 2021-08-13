@@ -19,7 +19,7 @@
       @if($job)
       <div class="d-flex justify-content-center">
         <h2 class="section-title mb-4">
-          <span>{{$job->title}}</span>&nbsp;at&nbsp;<span> Mentorian</span>
+          <span>{{$job->title}}</span>&nbsp;at&nbsp;<span> {{$job->company_name}}</span>
         </h2>
       </div>
 

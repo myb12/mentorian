@@ -57,6 +57,12 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/workshops_by_category/{id}','WorkshopController@workshopsByCategory')->name('workshop_by_category');
 });
 
-Auth::routes();
+Auth::routes([
 
-// Route::get('/home', 'HomeController@index')->name('home');
+  'register' => false, // Register Routes...
+
+  'reset' => false, // Reset Password Routes...
+
+  'verify' => false, // Email Verification Routes...
+
+]);

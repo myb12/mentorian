@@ -1,13 +1,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <!-- <a target="_blank" href="https://mentorianbd.com/" class="brand-link">
-      <img src="{{asset('assets/admin/dist/img/mentorian-logo2.png')}}"
-           alt="Mentorian Logo"
-           class="brand-image img-circle elevation-3" style="background-color: #fff;">
-      <span class="brand-text font-weight-light">Mentorian Opportnities</span>
-    </a> -->
-    <a href="index3.html" class="brand-link">
+    <a href="{{route('home')}}" class="brand-link">
       <img src="{{asset('assets/admin/dist/img/mentorian-logo2.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="background-color: #fff; opacity: .8;">
       <span class="brand-text font-weight-bold" style="font-size: 1rem;">Mentorian Opportunities</span>
     </a>

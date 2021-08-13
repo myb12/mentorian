@@ -48,8 +48,9 @@
             <div class="card">
               <div class="workshop-image">
                 <div class="workshop-ribbon">
-                  
-                   @if ($workshop->end_date < date('Y-m-d'))
+                   @if($workshop->start_date > date('Y-m-d') && $workshop->end_date > date('Y-m-d'))
+                     <small><i class="far fa-hourglass mr-1"></i>Upcoming</small>
+                   @elseif ($workshop->end_date < date('Y-m-d'))
                      <small><i class="fas fa-hourglass-end mr-1"></i>Deadline Over</small>
                    @else
                      <small><i class="fas fa-hourglass-half mr-1"></i>On Going</small>
