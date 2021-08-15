@@ -37,14 +37,12 @@ function activeColor(className) {
     ready(function() {
         links.forEach(link => {
             if (link.href && link.href == window.location) {
-                link.className += ` active`;
-                return;
+                link.classList.add("active");
             } else if (
                 !link.href &&
                 link.closest("a").href == window.location
             ) {
-                link.className += ` active`;
-                return;
+                link.classList.add("active");
             }
         });
     });
