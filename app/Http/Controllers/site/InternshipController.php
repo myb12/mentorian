@@ -19,7 +19,7 @@ class InternshipController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $jobs = Internship::all();
+        $jobs = Internship::paginate(10);
         $internships = DB::table('internships')->get();
         return view('site.job-list', compact('jobs', 'categories','internships'));
     }
@@ -92,7 +92,7 @@ class InternshipController extends Controller
     }
     public function internshipsByCategory($id){
         $categories = Category::all();
-        $jobs = Internship::select('*')->where('category_id', $id)->get();
+        $jobs = Internship::select('*')->where('category_id', $id)->paginate(10);
         if($jobs->count() == 0){
             $jobs = false;
         }

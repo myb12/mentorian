@@ -18,7 +18,7 @@ class WorkshopController extends Controller
     public function index()
     {
          $categories = Category::all();
-         $workshops = Workshop::all();
+         $workshops = Workshop::paginate(10);
          return view('site.workshop-list', compact('workshops', 'categories'));
     }
 
@@ -91,7 +91,7 @@ class WorkshopController extends Controller
 
     public function workshopsByCategory($id){
         $categories = Category::all();
-        $workshops = Workshop::select('*')->where('category_id', $id)->get();
+        $workshops = Workshop::select('*')->where('category_id', $id)->paginate(10);
 
         if($workshops->count() == 0){
             $workshops = false;

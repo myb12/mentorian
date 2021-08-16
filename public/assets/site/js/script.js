@@ -1,23 +1,4 @@
 /*==================== LINK ACTIVE ====================*/
-/* using jQuery  */
-// function activeColor(className) {
-//     const links = $(`.${className}`);
-//     $(document).ready(function() {
-//         for (let link of links) {
-//             if (link.href && link.href == window.location) {
-//                 link.className += ` active`;
-//                 return;
-//             } else if (
-//                 !link.href &&
-//                 link.closest("a").href == window.location
-//             ) {
-//                 link.className += ` active`;
-//                 return;
-//             }
-//         }
-
-//     });
-// }
 
 function ready(callback) {
     // in case the document is already rendered
@@ -37,12 +18,12 @@ function activeColor(className) {
     ready(function() {
         links.forEach(link => {
             if (link.href && link.href == window.location) {
-                link.classList.add("active");
+                link.classList.add("my-active");
             } else if (
                 !link.href &&
                 link.closest("a").href == window.location
             ) {
-                link.classList.add("active");
+                link.classList.add("my-active");
             }
         });
     });

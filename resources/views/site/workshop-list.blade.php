@@ -16,7 +16,7 @@
     <main>
       <!-- Workshops list section-->
     <!-- <div class="helper-div" id="opportunities"></div> -->
-    <section class="container mb-5">
+    <section class="container">
 
       <div class="row  mx-0">
           
@@ -46,6 +46,7 @@
           <div class="col-12 col-md-6 col-lg-4 mb-3 px-md-2">
 
             <div class="card">
+
               <div class="workshop-image">
                 <div class="workshop-ribbon">
                    @if($workshop->start_date > date('Y-m-d') && $workshop->end_date > date('Y-m-d'))
@@ -68,15 +69,19 @@
                   </div>
                 </a>
               </div>
+
               <div class="card-body">
                 <h5 class="card-title">{{$workshop->title}}</h5>
               </div>
+
               <div class="card-footer text-center">
                   <span><i class="fas fa-users mr-1"></i>{{$workshop->organization_name}}</span>
               </div>
+
             </div>
           </div>
           @endforeach
+
           @elseif(!$workshops)
              <div class="col-12 mb-3 ">
                <div class="not-found-message p-5 mt-0">
@@ -84,10 +89,16 @@
                 </div>
              </div>
           @endif
-
         </div>
       </div>
     </section>
+    @if($workshops)
+      <section class="container">
+        <div class="row">
+          <div class="col-12 col-md-9 d-flex justify-content-center">{!! $workshops->links() !!}</div>
+        </div>
+      </section>
+    @endif
   </main>
 
 @endsection

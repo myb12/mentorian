@@ -18,7 +18,7 @@ class JobController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $jobs = Job::all();
+        $jobs = Job::paginate(10);
         $internships = false;
         return view('site.job-list', compact('jobs', 'categories','internships'));
     }
@@ -92,7 +92,7 @@ class JobController extends Controller
 
     public function jobsByCategory($id){
         $categories = Category::all();
-        $jobs = Job::select('*')->where('category_id', $id)->get();
+        $jobs = Job::select('*')->where('category_id', $id)->paginate(10);
         if($jobs->count() == 0){
             $jobs = false;
         }

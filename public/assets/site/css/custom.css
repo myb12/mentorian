@@ -83,7 +83,7 @@ h5,
     visibility: visible;
 }
 
-.active {
+.my-active {
     border-radius: 5px !important;
     background-color: #c82333;
     color: #fff !important;
@@ -508,6 +508,23 @@ button:focus {
 
 .new_footer_top .f_widget.about-widget .f_list li a {
     color: #6a7695;
+}
+
+/* Pagination css */
+.pagination > li > a,
+.pagination > li > span {
+    color: #c82333;
+}
+
+.pagination li:hover a {
+    color: #c82333;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #c82333;
+    border-color: #c82333;
 }
 
 /* mobile device */

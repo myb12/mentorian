@@ -16,7 +16,7 @@
     <main>
       <!-- Jobs section-->
       <!-- <div class="helper-div" id="jobs"></div> -->
-      <section class="container mb-5">
+      <section class="container">
         <div class="row jobs mx-0">
           
           <div class="col-12 col-md-4 my-2 categories px-0 pl-md-0 pr-md-3">
@@ -161,6 +161,16 @@
           
         </div>
       </section>
+
+      @if($jobs)
+      <section class="container">
+        <div class="row">
+          <div class="col-12 col-md-4"></div>
+          <div class="col-12 col-md-8 d-flex justify-content-center">{!! $jobs->links() !!}</div>
+        </div>
+      </section>
+      @endif
+
     </main>
 
 @endsection
