@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
@@ -18,7 +19,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-      return view('admin.dashboard.index');
+      $categories = Category::all();
+      return view('admin.dashboard.index',compact('categories'));
     }
 
     /**

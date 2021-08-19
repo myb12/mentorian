@@ -42,7 +42,7 @@
     <ul class="navbar-nav ml-auto">
       @if (Auth::check())
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('dashboard.index')}}" class="nav-link">Home</a>
+        <a href="{{route('dashboard.index')}}" class="nav-link">Dashboard</a>
       </li>
       @endif
     
